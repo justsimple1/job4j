@@ -7,7 +7,7 @@ public class ArrayDefinition {
         name[1] = "Petr";
         name[2] = "Sergey";
         name[3] = "Anatoliy";
-        for(int index = 0;index < 4;index++){
+        for (int index = 0; index < 4; index++) {
             System.out.println(name[index]);
         }
     }
