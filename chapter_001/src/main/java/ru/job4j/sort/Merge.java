@@ -7,9 +7,9 @@ public class Merge {
         int[] rsl = new int[left.length + right.length];
         int index = 0;
         int count = 0;
-        int i = 0 ;
+        int i = 0;
         while (index < rsl.length) {
-            if ((right.length - 1 - i < 0 ) && (left.length - 1 - count >= 0 ) || ((left.length - 1 - count >= 0 ) && (left[count] < right[i]))) {
+            if ((right.length - 1 - i < 0) && (left.length - 1 - count >= 0) || ((left.length - 1 - count >= 0) && (left[count] < right[i]))) {
                 rsl[index++] = left[count++];
             } else {
                 rsl[index++] = right[i++];
