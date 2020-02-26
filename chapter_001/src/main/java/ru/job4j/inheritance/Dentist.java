@@ -6,5 +6,5 @@ public class Dentist extends Doctor {
 
 class Tooth {
     private int number;
-    public int getNumberTooth(){return number;}
+    public int getNumberTooth() {return number;}
 }
