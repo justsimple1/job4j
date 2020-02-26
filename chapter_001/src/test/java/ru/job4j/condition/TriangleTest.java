@@ -16,4 +16,26 @@ public class TriangleTest {
         boolean result = Triangle.exist(1.0, 4.0, 18.0);
         assertThat(result, is(false));
     }
+
+    @Test
+    public void whenExistNoSquare() {
+        Point a = new Point(1, 2);
+        Point b = new Point(1, 3);
+        Point c = new Point(1, 4);
+        Triangle triangle = new Triangle(a, b, c);
+        double rsl = triangle.area();
+        double exp = -1;
+        assertThat(rsl, is(exp));
+    }
+
+    @Test
+    public void whenExistSquare() {
+        Point a = new Point(5, 10);
+        Point b = new Point(10, 5);
+        Point c = new Point(5, 5);
+        Triangle triangle = new Triangle(a, b, c);
+        double rsl = triangle.area();
+        double exp = 12.5;
+        assertThat(rsl, is(exp));
+    }
 }
