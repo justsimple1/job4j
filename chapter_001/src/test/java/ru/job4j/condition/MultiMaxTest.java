@@ -27,6 +27,13 @@ public class MultiMaxTest {
     }
 
     @Test
+    public void whenFourthMax() {
+        MultiMax check = new MultiMax();
+        int result = check.max(1, 3, 5, 8);
+        assertThat(result, is(8));
+    }
+
+    @Test
     public void whenAllNumberAreEqual() {
         MultiMax check = new MultiMax();
         int result = check.max(7, 7, 7);
