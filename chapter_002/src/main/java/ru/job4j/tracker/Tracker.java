@@ -63,6 +63,17 @@ public class Tracker {
         return rsl;
     }
     /**
+     * Метод заменяющий, существующую заяку по id на новосозданную
+     * @param id ключ заменяемой заявки
+     * @param item заявка на которую заменяем
+     * @return rsl - провели или не провели заявку.
+     */
+    public boolean replace(String id, Item item) {
+        item.setId(items[indexOf(id)].getId());
+        items[indexOf(id)] = item;
+        return indexOf(id) != -1 ? true : false;
+    }
+    /**
      * Метод выводящий заявку по id
      * @param id уникальный идентификатор заявки
      * @return заявка по указанному id
