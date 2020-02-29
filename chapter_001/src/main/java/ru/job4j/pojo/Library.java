@@ -7,7 +7,7 @@ public class Library {
         Book fantastic = new Book("Mystery of the third planet", 800);
         Book program = new Book("Clean code", 100);
 
-        Book[] books = new Book[3];
+        Book[] books = new Book[4];
 
         books[0] = story;
         books[1] = classic;
@@ -29,7 +29,14 @@ public class Library {
             Book lib = books[index];
             System.out.println(lib.getName() + " - " + lib.getCount());
         }
-
+        System.out.println();
+        System.out.println("Output books with name 'Clean code'");
+        for (int index = 0; index < books.length; index++) {
+                Book lib = books[index];
+            if (lib.getName().equals("Clean code")) {
+                System.out.println(lib.getName() + " - " + lib.getCount());
+            }
+        }
         System.out.println("Replace all books to program");
         for (int index = 0; index < books.length; index++) {
             books[index] = program;
