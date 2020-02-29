@@ -69,9 +69,12 @@ public class Tracker {
      * @return rsl - провели или не провели заявку.
      */
     public boolean replace(String id, Item item) {
-        item.setId(items[indexOf(id)].getId());
-        items[indexOf(id)] = item;
-        return indexOf(id) != -1 ? true : false;
+        int index = indexOf(id);
+        if (index != -1) {
+            item.setId(items[index].getId());
+            items[index] = item;
+        }
+        return index != -1 ? true : false;
     }
     /**
      * Метод выводящий заявку по id
