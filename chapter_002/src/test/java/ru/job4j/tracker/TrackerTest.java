@@ -39,4 +39,14 @@ public class TrackerTest {
         Item[] result = tracker.findAll();
         assertThat(result, is(expected));
     }
+
+    @Test
+    public void whenAddNewItemThenTrackerFindByIdItem() {
+        Tracker tracker = new Tracker();
+        Item item = new Item("test1");
+        Item item2 = new Item("test3");
+        tracker.add(item);
+        Item result = tracker.findById(item2.getId());
+        assertThat(result.getName(), is(item.getName()));
+    }
 }

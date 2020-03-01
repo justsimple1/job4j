@@ -50,8 +50,17 @@ public class Tracker {
             }
         }
         names = size > 0 ? Arrays.copyOf(items, size) : null;
-//        names = Arrays.copyOf(names, size);
         return names;
+    }
+
+    private int indexOf(long id) {
+        int rsl = -1;
+        for (int index = 0; index < position; index++) {
+            if (items[index].getId() == (id)) {
+                rsl = index;
+            }
+        }
+        return rsl;
     }
     /**
      * Метод выводящий заявку по id
@@ -59,16 +68,17 @@ public class Tracker {
      * @return заявка по указанному id
      */
     public Item findById(long id) {
-        Item item = new Item();
-        for (int index = 0; index < position; index++) {
-            if (items[index].getId() == id) {
-                item = items[index];
-                break;
-            } else {
-                item = null;
-            }
-        }
-        return item;
+        int index = indexOf(id);
+        return index != -1 ? items[index] : null;
+    }
+
+    /**
+     * Метод удаляет заявку по id.
+     * @param id идентификатор удаляемой заявки
+     * @return
+     */
+    public boolean delete(String id) {
+        items[indexOf(id)] = null;
     }
     /**
      * Метод генерирует уникальный ключ для заявки.
