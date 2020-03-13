@@ -9,29 +9,23 @@ import java.util.StringJoiner;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class StartUITest {
-    @Test
-    public void whenExit() {
-        StubInput input = new StubInput(
-                new String[] {"0"}
-        );
-        StubAction action = new StubAction();
-        new StartUI().init(input, new Tracker(), new UserAction[] {action});
-        assertThat(action.isCall(), is(true));
-    }
+public class ShowAllActionTest {
 
     @Test
-    public void workingMenu() {
+    public void whenCheckOutput() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         PrintStream stdout = System.out;
         System.setOut(new PrintStream(out));
-        StubInput input = new StubInput(new String[] {"0"});
-        StubAction act = new StubAction();
-        new StartUI().init(input, new Tracker(), new UserAction[] {act});
+        Tracker tracker = new Tracker();
+        Item item = new Item("test");
+        tracker.add(item);
+        ShowAllAction act = new ShowAllAction();
+        act.execute(new StubInput(new String[] {}), tracker);
         String expected = new StringJoiner(System.lineSeparator(), "", System.lineSeparator())
-                .add("0. Stub Action")
+                .add(item.getName() + " " + item.getId())
                 .toString();
         assertThat(new String(out.toByteArray()), is(expected));
         System.setOut(stdout);
     }
+
 }
