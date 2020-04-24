@@ -4,7 +4,8 @@ public class Book {
     private String name;
     private int count;
 
-    public Book() {}
+    public Book() {
+    }
 
     public Book(String name, int count) {
         this.name = name;
