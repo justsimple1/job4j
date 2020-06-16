@@ -6,8 +6,12 @@ public class Profession {
     private String education;
     private String birthday;
 
-    public void getName(String name) {}
-    public void getSurname(String name) {}
-    public void getEducation(String name) {}
-    public void getBirthday(String name) {}
+    public void getName(String name) {
+    }
+    public void getSurname(String name) {
+    }
+    public void getEducation(String name) {
+    }
+    public void getBirthday(String name) {
+    }
 }

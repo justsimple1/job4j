@@ -14,8 +14,7 @@ public class ConsoleInput implements Input {
 
     @Override
     public int askInt(String question) {
-        System.out.println(question);
-        return Integer.valueOf(scanner.nextLine());
+        return Integer.valueOf(askStr(question));
     }
 
     @Override
@@ -23,8 +22,7 @@ public class ConsoleInput implements Input {
         int select = askInt(question);
         if (select >= 0 && select < max) {
             return select;
-        }
-        else {
+        } else {
             throw new IllegalStateException(String.format("Out of %s > [0, %s]", select, max));
         }
     }
