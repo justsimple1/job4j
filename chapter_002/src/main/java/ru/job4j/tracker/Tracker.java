@@ -15,9 +15,7 @@ public class Tracker {
      */
     public Item add(Item item) {
         item.setId(this.generateId());
-        if (!items.contains(item)){
             this.items.add(item);
-        }
         return item;
     }
     /**
@@ -46,11 +44,10 @@ public class Tracker {
      * @return - индекс искоомого
      */
     private int indexOf(String id) {
-       int index= items.indexOf(id);
         int rsl = -1;
-        for (Item item: items) {
-            if (item.getId().equals(id)) {
-                rsl = index;
+        for(int i = 0; i < items.size(); i++) {
+            if(items.get(i).equals(id)){
+                rsl = i;
                 break;
             }
         }
@@ -68,7 +65,7 @@ public class Tracker {
             item.setId(items.get(index).getId());
             items.set(index, item);
         }
-        return index != -1 ? true : false;
+        return index != -1 ;
     }
     /**
      * Метод выводящий заявку по id
