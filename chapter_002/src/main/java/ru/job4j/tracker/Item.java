@@ -1,6 +1,8 @@
 package ru.job4j.tracker;
 
-public class Item {
+import java.util.Comparator;
+
+public class Item implements Comparator<Item> {
     private String name;
     private String id;
 
@@ -25,6 +27,18 @@ public class Item {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    @Override
+    public int compare(Item first, Item second) {
+        return first.getName().compareTo(second.getName());
+    }
+
+    @Override
+    public String toString() {
+        return "Job{" +
+                "name='" + name + '\'' +
+                '}';
     }
 
 }
