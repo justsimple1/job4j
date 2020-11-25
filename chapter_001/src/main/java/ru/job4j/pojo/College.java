@@ -8,6 +8,8 @@ public class College {
         student.setFio("Panin N. N.");
         student.setGroup("intern");
         student.setCreated(new Date());
-        System.out.println(student.getFio() + " entered in group - '" + student.getGroup() + "' : " + student.getCreated());
+        System.out.println(student.getFio() + " entered in group - '"
+                + student.getGroup() + "' : "
+                + student.getCreated());
     }
 }

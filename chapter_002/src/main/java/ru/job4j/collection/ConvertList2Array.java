@@ -4,7 +4,7 @@ import java.util.List;
 
 public class ConvertList2Array {
     public static int[][] toArray(List<Integer> list, int cells) {
-        int groups = (int)Math.ceil((double)list.size() / cells);
+        int groups = (int) Math.ceil((double) list.size() / cells);
         System.out.println(groups);
         int row = 0;
         int cell = 0;

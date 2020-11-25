@@ -4,11 +4,11 @@ public class Slash {
     public static void draw(int size) {
         for (int row = 0; row < size; row++) {
             for (int cell = 0; cell < size; cell++) {
-                boolean left = false; // добавить условие, по которому нужно определить ставить ли символ или нет.
+                boolean left = false;
                 if (row == cell) {
                     left = true;
                 }
-                boolean right = false; // добавить условие, что нужно ставить элемент в правый угол.
+                boolean right = false;
                 if (cell + 1 == size - row) {
                     right = true;
                 }

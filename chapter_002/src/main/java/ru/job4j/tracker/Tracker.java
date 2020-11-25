@@ -9,6 +9,7 @@ public class Tracker {
      * Коллекция для хранение заявок.
      */
     private  List<Item> items = new ArrayList<Item>();
+
     /**
      * Метод реализующий добавление заявки в хранилище
      * @param item новая заявка
@@ -18,6 +19,7 @@ public class Tracker {
             this.items.add(item);
         return item;
     }
+
     /**
      * Метод выводящий список всех заявок.
      * @return items массив заявок.
@@ -25,6 +27,7 @@ public class Tracker {
     public  List<Item> findAll() {
         return items;
     }
+
     /**
      * Метод выводящий список заявок с определённым именем
      * @param key имя заявки
@@ -39,20 +42,22 @@ public class Tracker {
         }
         return names;
     }
+
     /**
      * Метод возращает индекс искомого элеиента Находим индекс
      * @return - индекс искоомого
      */
     private int indexOf(String id) {
         int rsl = -1;
-        for(int i = 0; i < items.size(); i++) {
-            if(items.get(i).equals(id)){
+        for (int i = 0; i < items.size(); i++) {
+            if (items.get(i).equals(id)) {
                 rsl = i;
                 break;
             }
         }
         return rsl;
     }
+
     /**
      * Метод заменяющий, существующую заяку по id на новосозданную
      * @param id ключ заменяемой заявки
@@ -65,8 +70,9 @@ public class Tracker {
             item.setId(items.get(index).getId());
             items.set(index, item);
         }
-        return index != -1 ;
+        return index != -1;
     }
+
     /**
      * Метод выводящий заявку по id
      * @param id уникальный идентификатор заявки
@@ -76,6 +82,7 @@ public class Tracker {
         int index = indexOf(id);
         return index != -1 ? items.get(index) : null;
     }
+
     /**
      * Метод удаляет заявку по id.
      * @param id идентификатор удаляемой заявки
@@ -88,9 +95,11 @@ public class Tracker {
         }
         return index != -1 ? true : false;
     }
+
     /**
      * Метод генерирует уникальный ключ для заявки.
-     * Так как у заявки нет уникальности полей, имени и описание. Для идентификации нам нужен уникальный ключ.
+     * Так как у заявки нет уникальности полей, имени и описание.
+     * Для идентификации нам нужен уникальный ключ.
      * @return Уникальный ключ.
      */
     private String generateId() {

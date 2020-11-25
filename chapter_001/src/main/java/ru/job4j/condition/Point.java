@@ -10,6 +10,7 @@ public class Point {
         this.x = first;
         this.y = second;
     }
+
     public Point(int x, int y, int z) {
         this.x = x;
         this.y = y;
@@ -19,9 +20,12 @@ public class Point {
     public double distance(Point that) {
         return Math.sqrt(Math.pow(this.x - that.x, 2) + Math.pow(this.y - that.y, 2));
     }
+
     public double distance3d(Point that) {
-        return Math.sqrt(Math.pow(this.x - that.x, 2) + Math.pow(this.y - that.y, 2) + Math.pow(this.z - that.z, 2));
+        return Math.sqrt(Math.pow(this.x - that.x, 2) + Math.pow(this.y - that.y, 2)
+                + Math.pow(this.z - that.z, 2));
     }
+
     public static void main(String[] args) {
         Point first = new Point(1, 2);
         Point second = new Point(4, 6);

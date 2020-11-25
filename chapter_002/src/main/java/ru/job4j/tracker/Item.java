@@ -36,8 +36,8 @@ public class Item implements Comparator<Item> {
 
     @Override
     public String toString() {
-        return "Job{" +
-                "name='" + name + '\'' +
-                '}';
+        return "Job{"
+               + "name='" + name + '\''
+               + '}';
     }
 }

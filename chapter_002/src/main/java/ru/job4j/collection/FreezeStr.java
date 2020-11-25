@@ -23,11 +23,10 @@ public class FreezeStr {
                 } else {
                     map.remove(symbol);
                 }
-            }
-            else {
+            } else {
                 break;
             }
         }
-        return map.size()==0;
+        return map.size() == 0;
     }
 }

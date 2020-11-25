@@ -8,6 +8,7 @@ public class Doctor extends Profession {
 
 class Diagnose {
     private String titleDisease;
+
     public String getTitleDisease() {
         return titleDisease;
     }
@@ -16,9 +17,11 @@ class Diagnose {
 class Pacient {
     private String symptoms;
     private String name;
+
     public String getSymptoms() {
         return symptoms;
     }
+
     public String getName() {
         return name;
     }

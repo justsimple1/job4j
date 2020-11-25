@@ -14,6 +14,7 @@ public class StartUI {
             run = action.execute(input, tracker);
         }
     }
+
     private void showMenu(List<UserAction> actions) {
         int index = 0;
         for (UserAction action: actions) {
@@ -21,11 +22,12 @@ public class StartUI {
             index++;
         }
     }
+
     public static void main(String[] args) {
         Tracker tracker = new Tracker();
         Input input = new ConsoleInput();
         Input validate = new ValidateInput();
-        List <UserAction> actions = new ArrayList<UserAction>();
+        List<UserAction> actions = new ArrayList<UserAction>();
         actions.add(new CreateAction());
         actions.add(new ShowAllAction());
         actions.add(new ReplaceAction());

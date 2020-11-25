@@ -8,6 +8,7 @@ public class Programmer extends Engineer {
 
 class Lan {
     private double length;
+
     public double getLength() {
         return length;
     }

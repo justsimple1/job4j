@@ -8,6 +8,7 @@ public class Surgeon extends Doctor {
 
 class Organ {
     private String titleOrgan;
+
     public String getTitleOrgan() {
         return titleOrgan;
     }

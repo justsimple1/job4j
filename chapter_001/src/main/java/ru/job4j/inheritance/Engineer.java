@@ -9,9 +9,11 @@ public class Engineer extends Profession {
 class Scheme {
     private String format;
     private String style;
+
     public String getFormat() {
         return format;
     }
+
     public String getStyle() {
         return style;
     }
@@ -20,9 +22,11 @@ class Scheme {
 class House {
     private String size;
     private String place;
+
     public String getSize() {
         return size;
     }
+
     public String getPlace() {
         return place;
     }

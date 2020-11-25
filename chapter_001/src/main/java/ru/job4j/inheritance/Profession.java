@@ -8,10 +8,13 @@ public class Profession {
 
     public void getName(String name) {
     }
+
     public void getSurname(String name) {
     }
+
     public void getEducation(String name) {
     }
+
     public void getBirthday(String name) {
     }
 }
