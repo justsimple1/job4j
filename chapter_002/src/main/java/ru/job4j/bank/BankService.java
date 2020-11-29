@@ -24,28 +24,17 @@ public class BankService {
     }
 
     public User findByPassport(String passport) {
-            User user = null;
-            for (User key : users.keySet()) {
-                    if (key.getPassport().equals(passport)) {
-                        user = key;
-                        break;
-                    }
-            }
+            User user = users.keySet().stream().filter(e -> e.getPassport()
+                    .equals(passport)).findFirst().orElse(null);
         return user;
     }
 
     public Account findByRequisite(String passport, String requisite) {
-        Account account = null;
         User user = findByPassport(passport);
+        Account account = null;
         if (user != null) {
-            List<Account> list = users.get(user);
-            for (Account key : list) {
-                if (key.getRequisite().equals(requisite)) {
-                    account = key;
-                    break;
-                }
-
-            }
+             account = users.get(user).stream().filter(e -> e.getRequisite()
+                     .equals(requisite)).findFirst().orElse(null);
         }
         return account;
     }
